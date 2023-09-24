@@ -1,0 +1,221 @@
+/* Existing CSS styles */
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/* Add these styles to your existing CSS */
+.image-container {
+    position: fixed;
+    /* Fix the position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    /* Set a high z-index to make it appear in front */
+    pointer-events: none;
+    /* Allow clicks to pass through to underlying content */
+}
+
+floating-image {
+    position: absolute;
+    animation: floatAnimation 5s ease-in-out infinite;
+    width: 250px;
+    /* Adjust the width as needed */
+    height: 200px;
+    /* Adjust the height as needed */
+}
+
+floating-image:nth-child(1) {
+    left: 10%;
+    top: 20%;
+    border-radius: 10px;
+}
+
+/* Rest of your CSS styles here */
+
+
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+        /* Adjust the vertical float distance */
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Rest of your CSS styles here */
+
+body {
+    color: aliceblue;
+    font-family: 'Noto Serif Sinhala', serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url(/Laksha/R.jpg);
+    /* Set your background image here */
+    background-size: cover;
+    background-attachment: fixed;
+    /* Fix the background image */
+    animation: backgroundScroll 60s linear infinite;
+    /* Adjust the duration as needed */
+    background-size: cover;
+}
+
+/* Set up initial state for the background container */
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(/Laksha/R.jpg);
+    /* Replace 'background.jpg' with your image file path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    /* Add a blur effect to the background image */
+    -webkit-filter: blur(5px);
+    /* For compatibility with some browsers */
+    z-index: -1;
+    /* Place the background behind other content */
+    transition: transform 1s ease-in-out;
+    /* Add a smooth transition for the zoom effect */
+    transform: scale(1);
+    /* Initial zoom level (no zoom) */
+}
+
+/* Set up zoomed-out state for the background container */
+#background-container.zoomed-out {
+    transform: scale(1.2);
+    /* Zoom out to 120% when the class is applied */
+}
+
+/* Make the background container mobile responsive */
+@media (max-width: 768px) {
+    #background-container {
+        background-attachment: scroll;
+        /* Allow the background image to scroll on mobile devices */
+    }
+}
+
+
+h1 {
+    background-image: linear-gradient(to left, #b3b3b3, #eeecec);
+    /* Replace these colors with your desired gradient colors */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    padding: 10px 20px;
+    /* Adjust padding as needed */
+    border-radius: 16px;
+}
+
+
+
+
+/* Define the animation */
+@keyframes backgroundScroll {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+.glass-box {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(6.1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 10px;
+    padding: 20px;
+}
+
+.title-box {
+    margin-bottom: 20px;
+}
+
+.text-box {
+    text-align: justify;
+}
+
+/* Existing CSS styles */
+
+.tab {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Add a transition effect */
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+    /* Initially set opacity to 0 */
+    transition: opacity 0.3s ease;
+    /* Add a transition effect for opacity */
+}
+
+.yt {
+    border-radius: 10px;
+}
+
+.imgd {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Adjust the number of columns as needed */
+    gap: 20px;
+    /* Adjust the gap between images */
+}
+
+.image-item {
+    text-align: center;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 aspect ratio (h / w * 100) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
